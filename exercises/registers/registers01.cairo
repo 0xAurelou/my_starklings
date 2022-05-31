@@ -1,7 +1,5 @@
 %lang starknet
 
-# I AM NOT DONE
-
 # Ressource
 # https://www.cairo-lang.org/docs/how_cairo_works/functions.html#function-arguments-and-return-values
 
@@ -9,14 +7,16 @@
 # Rewrite this function with a high level syntax
 @external
 func assert_is_42(n : felt):
-    # [ap - 3] = 42
-    # ret
+     [ap - 3] = 42
+     ret
 end
 
 # TODO
 # Rewrite this function with a low level syntax, using registers
 @external
 func sum(a : felt, b : felt) -> (s : felt):
+    [ap] = [ap - 3] + [ap - 4]; ap++
+    ret
     # return (a + b)
 end
 
